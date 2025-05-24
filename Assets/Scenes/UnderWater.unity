@@ -825,6 +825,7 @@ GameObject:
   m_Component:
   - component: {fileID: 930723905}
   - component: {fileID: 930723904}
+  - component: {fileID: 930723906}
   m_Layer: 0
   m_Name: OceanDepthManager
   m_TagString: Untagged
@@ -881,6 +882,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &930723906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930723903}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e36a0031e32748a391ca1b3ee62b6a10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oceanLayers:
+  - name: Default
+    depthOffSet: 0
+    volumeProfile: {fileID: 11400000, guid: 20ea68209c5f62c45bf3cbafc76dc42c, type: 2}
+  - name: Sunlight
+    depthOffSet: 2
+    volumeProfile: {fileID: 11400000, guid: b7ebcefef3271bc498bd53812f5f5301, type: 2}
+  - name: Twilight
+    depthOffSet: 4
+    volumeProfile: {fileID: 11400000, guid: d22335102981b9f45b3e9470ff42ff75, type: 2}
+  - name: Midnight
+    depthOffSet: 6
+    volumeProfile: {fileID: 11400000, guid: d632d0b837e7c9840be2c83adf95853d, type: 2}
+  - name: Abyss
+    depthOffSet: 8
+    volumeProfile: {fileID: 11400000, guid: ed919815d9da40840a328069a0f57ae3, type: 2}
+  - name: Trench
+    depthOffSet: 10
+    volumeProfile: {fileID: 11400000, guid: a86aa6c121857a64ab0a01675ca13c40, type: 2}
+  postProcessVolume: {fileID: 1186737741}
+  textMeshProUGUI: {fileID: 1354276249}
 --- !u!1 &957430251
 GameObject:
   m_ObjectHideFlags: 0
@@ -2226,6 +2260,8 @@ GameObject:
   - component: {fileID: 2512387470422636674}
   - component: {fileID: 2512387470422636672}
   - component: {fileID: 2512387470422636673}
+  - component: {fileID: 2512387470422636675}
+  - component: {fileID: 2512387470422636676}
   m_Layer: 0
   m_Name: XR Origin (AR Rig)
   m_TagString: Untagged
@@ -2315,6 +2351,40 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_AnchorPrefab: {fileID: 0}
+--- !u!114 &2512387470422636675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2512387470422636669}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 698a86c667bb4de2b8690817547bf148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  underWaterPostFX: {fileID: 62767981}
+  globalPostFX: {fileID: 1186737741}
+  lowPassFilter: {fileID: 0}
+  depthThreshold: 2
+--- !u!114 &2512387470422636676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2512387470422636669}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4b6dfed250d47298642f27a6e39c99b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterPlanePrefab: {fileID: 8698425944220826850, guid: b55704eccf598684093d404f8af79ae9,
+    type: 3}
+  inputActions: {fileID: -944628639613478452, guid: 270ecff408b245e46b39a4dee3b8aa5b,
+    type: 3}
+  postProcessVolume: {fileID: 0}
+  layerText: {fileID: 0}
 --- !u!4 &2512387470860572925
 Transform:
   m_ObjectHideFlags: 0
