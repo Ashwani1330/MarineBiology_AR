@@ -19,7 +19,7 @@ RenderSettings:
   m_FogMode: 1
   m_FogDensity: 0.01
   m_LinearFogStart: 0
-  m_LinearFogEnd: 20
+  m_LinearFogEnd: 50
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
@@ -826,6 +826,7 @@ GameObject:
   - component: {fileID: 930723905}
   - component: {fileID: 930723904}
   - component: {fileID: 930723906}
+  - component: {fileID: 930723907}
   m_Layer: 0
   m_Name: OceanDepthManager
   m_TagString: Untagged
@@ -845,7 +846,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7d3d2f665162d4bb9238dc47795c45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arCamera: {fileID: 2512387468973847774}
   postProcessVolume: {fileID: 1186737741}
   oceanLayers:
   - name: Default
@@ -915,6 +915,21 @@ MonoBehaviour:
     volumeProfile: {fileID: 11400000, guid: a86aa6c121857a64ab0a01675ca13c40, type: 2}
   postProcessVolume: {fileID: 1186737741}
   textMeshProUGUI: {fileID: 1354276249}
+--- !u!114 &930723907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930723903}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ee14c88767d4308bcc33307da1339aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterPlaneName: HighPolyPlane
+  moveDistance: 2
+  moveDuration: 1
 --- !u!1 &957430251
 GameObject:
   m_ObjectHideFlags: 0
@@ -1581,6 +1596,50 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1621646179
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1621646181}
+  - component: {fileID: 1621646180}
+  m_Layer: 0
+  m_Name: fps_controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1621646180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621646179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ffc6b680d1ef1744821a59d0aa6eff6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1621646181
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621646179}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -16.977774, y: -2.6215048, z: -40.047638}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2302,7 +2361,7 @@ MonoBehaviour:
       m_Calls: []
   m_PlanePrefab: {fileID: 1374196765487540282, guid: fe32561234a3fec4a8221fcf85ed88f7,
     type: 3}
-  m_DetectionMode: -1
+  m_DetectionMode: 1
 --- !u!114 &2512387470422636672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2315,10 +2374,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e8155f22873f9b4880528d3d8fb3211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterPlanePrefab: {fileID: 573193841346059616, guid: 586c4b9a56180c64a951e6cabe9226b5,
+  waterPlanePrefab: {fileID: 3735939103118759355, guid: 49b50341c826e1d4eadc4cf5f95a44a1,
     type: 3}
   inputActions: {fileID: -944628639613478452, guid: 270ecff408b245e46b39a4dee3b8aa5b,
     type: 3}
+  upButton: {fileID: 807092727}
+  downButton: {fileID: 1965173420}
 --- !u!114 &2512387470422636673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2326,7 +2387,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2512387470422636669}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53af1bc638026ea4fb939f18a4948f2a, type: 3}
   m_Name: 
@@ -2358,7 +2419,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2512387470422636669}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 698a86c667bb4de2b8690817547bf148, type: 3}
   m_Name: 
@@ -2513,3 +2574,4 @@ SceneRoots:
   - {fileID: 62767982}
   - {fileID: 1784006908}
   - {fileID: 1626376321}
+  - {fileID: 1621646181}

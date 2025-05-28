@@ -1900,12 +1900,22 @@ PrefabInstance:
     - target: {fileID: 46611238441703055, guid: b55704eccf598684093d404f8af79ae9,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 25
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 46611238441703055, guid: b55704eccf598684093d404f8af79ae9,
         type: 3}
       propertyPath: m_MeshFormatVersion
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335544024394760430, guid: b55704eccf598684093d404f8af79ae9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856361119409658452, guid: b55704eccf598684093d404f8af79ae9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.07
       objectReference: {fileID: 0}
     - target: {fileID: 4340256215999044806, guid: b55704eccf598684093d404f8af79ae9,
         type: 3}
