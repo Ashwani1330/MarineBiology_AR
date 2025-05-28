@@ -75,7 +75,7 @@ public class WaterPlaneSpawner : MonoBehaviour
                     }
 
                     // Instantiate water plane as child of anchor
-                    GameObject spawnedPlane = Instantiate(waterPlanePrefab, Vector3.zero, Quaternion.identity, anchor.transform);
+                    GameObject spawnedPlane = Instantiate(waterPlanePrefab, hitPose.position, hitPose.rotation, anchor.transform);
                     _moverInstance = spawnedPlane.GetComponent<WaterPlaneMover>();
                     
                     // Assign button listeners
