@@ -12,4 +12,9 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadScene("UnderWater");
     }
+
+    public void LoadCustomCreateScene()
+    {
+        SceneManager.LoadScene("CustomCreate");
+    }
 }
