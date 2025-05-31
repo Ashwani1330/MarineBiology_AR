@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.49411765, g: 0.78431374, b: 0.8901961, a: 1}
   m_FogMode: 1
   m_FogDensity: 0.01
@@ -93,7 +93,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 9847d59e14b22384292d95f2ca89e49f,
+    type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -416,13 +417,13 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 5000
   m_UseColorTemperature: 1
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 2.854e-42, y: -3.9998596e-38, z: 5.84e-43, w: 2.73e-43}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
@@ -2699,7 +2700,7 @@ PrefabInstance:
     - target: {fileID: 3636944512268628295, guid: 49b50341c826e1d4eadc4cf5f95a44a1,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 6831
+      value: 6849
       objectReference: {fileID: 0}
     - target: {fileID: 3735939103118759355, guid: 49b50341c826e1d4eadc4cf5f95a44a1,
         type: 3}

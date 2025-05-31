@@ -21,7 +21,7 @@ public class APIManager : MonoBehaviour
         UnityWebRequest www = UnityWebRequest.Post(gasUrl, form);
         
         yield return www.SendWebRequest();
-        string response = "";
+        string response;
 
         if (www.result == UnityWebRequest.Result.Success)
         {
