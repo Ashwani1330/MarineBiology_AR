@@ -1501,7 +1501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CameraToFace: {fileID: 0}
   m_ObjectPrefabs:
-  - {fileID: 1735853375232279584, guid: 8fa51c883623c8341a1544f6846406c9, type: 3}
+  - {fileID: 3946059540106289001, guid: f75771a9451896346a82588395896f4d, type: 3}
   - {fileID: 4453940279303841996, guid: bc7e531fb95106340bce2fe5db5d235a, type: 3}
   - {fileID: 3946059540106289001, guid: f75771a9451896346a82588395896f4d, type: 3}
   m_SpawnVisualizationPrefab: {fileID: 0}
@@ -7140,6 +7140,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arSession: {fileID: 702413258}
   previousSceneName: StartScene
+  infoCanvas: {fileID: 0}
+  quizCanvas: {fileID: 0}
 --- !u!4 &1943077774
 Transform:
   m_ObjectHideFlags: 0

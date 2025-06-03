@@ -17,11 +17,11 @@ public class UICanvasManager : MonoBehaviour
 
     public void ShowQuizCanvas()
     {
-        infoCanvas.SetActive(true);
+        quizCanvas.SetActive(true);
     }
 
     public void HideQuizCanvas()
     {
-        infoCanvas.SetActive(false);
+        quizCanvas.SetActive(false);
     }
 }
