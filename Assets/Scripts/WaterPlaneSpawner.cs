@@ -17,6 +17,7 @@ public class WaterPlaneSpawner : MonoBehaviour
     private WaterPlaneMover _moverInstance;
     public Button upButton;
     public Button downButton;
+    public GameObject waterCamPlane;
 
     private InputAction _touchAction;
     private bool _planePlaced;
@@ -95,6 +96,7 @@ public class WaterPlaneSpawner : MonoBehaviour
                     }
                     */
 
+                    waterCamPlane.SetActive(true);
                     _planePlaced = true;
 
                     // Disable plane detection and hide existing planes
