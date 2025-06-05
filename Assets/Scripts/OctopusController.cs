@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 using Vector2 = UnityEngine.Vector2;
 
 public class OctopusController : MonoBehaviour

@@ -9,6 +9,7 @@ public class WaterPlaneSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject waterPlanePrefab;
     [SerializeField] private InputActionAsset inputActions;
+    [SerializeField] private Transform fixedWorldContainer;
 
     private ARRaycastManager _arRaycastManager;
     private ARPlaneManager _arPlaneManager;
@@ -17,7 +18,7 @@ public class WaterPlaneSpawner : MonoBehaviour
     private WaterPlaneMover _moverInstance;
     public Button upButton;
     public Button downButton;
-    public GameObject waterCamPlane;
+    // public GameObject waterCamPlane;
 
     private InputAction _touchAction;
     private bool _planePlaced;
@@ -76,7 +77,7 @@ public class WaterPlaneSpawner : MonoBehaviour
                     }
 
                     // Instantiate water plane as child of anchor
-                    GameObject spawnedPlane = Instantiate(waterPlanePrefab, hitPose.position, hitPose.rotation, anchor.transform);
+                    GameObject spawnedPlane = Instantiate(waterPlanePrefab, hitPose.position, hitPose.rotation, fixedWorldContainer);
                     _moverInstance = spawnedPlane.GetComponent<WaterPlaneMover>();
                     
                     // Assign button listeners
@@ -96,7 +97,7 @@ public class WaterPlaneSpawner : MonoBehaviour
                     }
                     */
 
-                    waterCamPlane.SetActive(true);
+                    // waterCamPlane.SetActive(true);
                     _planePlaced = true;
 
                     // Disable plane detection and hide existing planes
