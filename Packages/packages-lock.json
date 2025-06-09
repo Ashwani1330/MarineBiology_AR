@@ -382,6 +382,13 @@
       "dependencies": {},
       "hash": "d741912bfeaad8da4fe0f258f4f3eefe1fe7b3f3"
     },
+    "net.gree.unity-webview": {
+      "version": "https://github.com/gree/unity-webview.git?path=/dist/package",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "a12e2e6a53538ebe1a9a9781f7103a53dd987a55"
+    },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
       "depth": 0,

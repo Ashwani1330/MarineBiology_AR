@@ -1,26 +1,35 @@
 using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
 
+[RequireComponent(typeof(Rigidbody))]
 public class OctopusController : MonoBehaviour
 {
     public FixedJoystick joystick;
-    public float moveSpeed = 0.5f;
-    
-    private void Update()
+    public float moveSpeed = 2f;
+
+    private Rigidbody _rb;
+
+    private void Awake()
+    {
+        _rb = GetComponent<Rigidbody>();
+        _rb.interpolation = RigidbodyInterpolation.Interpolate;
+        _rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+    }
+
+    private void FixedUpdate()
     {
         Vector2 input = joystick.Direction;
 
-        // Only move if there is a meaningful impact
         if (input.magnitude > 0.1f)
         {
-            Vector3 moveDir = new Vector3(input.x, 0, input.y);
-            transform.Translate(moveDir * (moveSpeed * Time.deltaTime), Space.World);
-            
-            // Rotate octopus towards movement direction
+            Vector3 moveDir = new Vector3(input.x, 0, input.y).normalized;
+            Vector3 targetPosition = _rb.position + moveDir * (moveSpeed * Time.fixedDeltaTime);
+            _rb.MovePosition(targetPosition);
+
             if (moveDir != Vector3.zero)
             {
                 Quaternion toRotation = Quaternion.LookRotation(moveDir, Vector3.up);
-                transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, 5f * Time.deltaTime);
+                _rb.MoveRotation(Quaternion.Slerp(_rb.rotation, toRotation, 5f * Time.fixedDeltaTime));
             }
         }
     }

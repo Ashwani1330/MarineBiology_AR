@@ -13485,7 +13485,7 @@ PrefabInstance:
     - target: {fileID: 4586349776260570613, guid: 1aebf80568a6aaa4bad5b1512261691e,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -18741,7 +18741,7 @@ PrefabInstance:
     - target: {fileID: 6077200319383189095, guid: 43922be0e9f63f14bb693707989db457,
         type: 3}
       propertyPath: m_Name
-      value: Portal test2 Variant
+      value: Aquatic_Portal_x2
       objectReference: {fileID: 0}
     - target: {fileID: 6194473054090351259, guid: 43922be0e9f63f14bb693707989db457,
         type: 3}
