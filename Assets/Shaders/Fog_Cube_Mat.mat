@@ -79,9 +79,9 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Edge_Softness: 1
-    - _FallOff_Distance: 12
-    - _Fog_Density: 1
+    - _Edge_Softness: 10
+    - _FallOff_Distance: 15
+    - _Fog_Density: 2
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1

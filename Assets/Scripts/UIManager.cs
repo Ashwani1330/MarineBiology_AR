@@ -8,9 +8,14 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("AR_Spawn");
     }
 
-    public void LoadUnderWaterScene()
+    public void LoadFreeExploreEcosystem()
     {
-        SceneManager.LoadScene("UnderWater");
+        SceneManager.LoadScene("FreeExplore");
+    }
+
+    public void LoadModuleWise()
+    {
+        SceneManager.LoadScene("ModuleWise");
     }
 
     public void LoadCustomCreateScene()
