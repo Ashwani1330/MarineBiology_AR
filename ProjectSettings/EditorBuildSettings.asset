@@ -15,11 +15,14 @@ EditorBuildSettings:
     path: Assets/Scenes/AR_Spawn.unity
     guid: 0812d52c3728c2246a74833dc2c50c37
   - enabled: 1
-    path: Assets/Scenes/UnderWater.unity
+    path: Assets/Scenes/FreeExplore.unity
     guid: 59aced77654ae1842a90698dade0b763
   - enabled: 1
     path: Assets/Scenes/CustomCreate.unity
     guid: 8eb5333f975a49a47ae9eb896c1c9e2a
+  - enabled: 1
+    path: Assets/Scenes/ModuleWise.unity
+    guid: bce86c1fad171da42ae83fdb80fb4b67
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 6ee72d15cf39dd748a13eac57397b9af,
       type: 2}

@@ -18,5 +18,6 @@ public class ARActivator : MonoBehaviour
         
         // Disable temporary UI camera
         uiCamera.gameObject.SetActive(false);
+        uiCamera.gameObject.SetActive(false);
     }
 }

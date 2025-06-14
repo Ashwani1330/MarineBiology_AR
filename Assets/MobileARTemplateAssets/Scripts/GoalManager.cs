@@ -136,6 +136,10 @@ public class GoalManager : MonoBehaviour
     [SerializeField]
     GameObject m_OptionsButton;
 
+    [Tooltip("The SketchFab Button to enable once the greeting prompt is dismissed.")]
+    [SerializeField]
+    GameObject m_SketchFabButton;
+    
     [Tooltip("The AI Button to enable once the greeting prompt is dismissed.")] [SerializeField]
     GameObject ai_button;
     
@@ -310,6 +314,7 @@ public class GoalManager : MonoBehaviour
         m_GreetingPrompt.SetActive(false);
         m_OptionsButton.SetActive(true);
         m_CreateButton.SetActive(true);
+        m_SketchFabButton.SetActive(true);
         m_MenuManager.enabled = true;
 
         for (int i = startingStep; i < m_StepList.Count; i++)
