@@ -1929,6 +1929,7 @@ MonoBehaviour:
   resultTitleText: {fileID: 3913643397719114372}
   resultScoreText: {fileID: 4698897145669981200}
   starfishRewardImage: {fileID: 8201337132063842773}
+  tryAgain: {fileID: 0}
 --- !u!1 &1346648958601026538
 GameObject:
   m_ObjectHideFlags: 0
@@ -5984,7 +5985,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3431747895604620118
 Transform:
   m_ObjectHideFlags: 0

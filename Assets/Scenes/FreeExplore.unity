@@ -5008,9 +5008,10 @@ GameObject:
   - component: {fileID: 2512387470422636673}
   - component: {fileID: 2512387470422636675}
   - component: {fileID: 2512387470422636676}
+  - component: {fileID: 2512387470422636678}
   m_Layer: 0
   m_Name: XR Origin (AR Rig)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5150,6 +5151,27 @@ MonoBehaviour:
   arSessionOrigin: {fileID: 2512387470422636641}
   minDepth: 0
   maxDepth: 4.5
+--- !u!65 &2512387470422636678
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2512387470422636669}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &2512387470860572925
 Transform:
   m_ObjectHideFlags: 0

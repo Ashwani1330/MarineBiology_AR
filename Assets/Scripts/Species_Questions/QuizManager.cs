@@ -17,6 +17,7 @@ public class QuizManager: MonoBehaviour {
     public Button[] optionButtons;  // Assign in inspector
     public TextMeshProUGUI feedbackText;
     public TextMeshProUGUI scoreText;
+
     public GameObject quizPanel;
     public GameObject resultPanel;
     public GameObject starfishPrefab;
@@ -24,6 +25,7 @@ public class QuizManager: MonoBehaviour {
     public TextMeshProUGUI resultTitleText;
     public TextMeshProUGUI resultScoreText;
     public GameObject starfishRewardImage;
+    public Button tryAgain;
 
 
     int currentQuestion = 0;
@@ -125,7 +127,29 @@ public class QuizManager: MonoBehaviour {
             starfishRewardImage.SetActive(percent >= 0.9f);
 
         // Optionally, also spawn a 3D starfish in AR if you want
-        if (percent >= 0.9f && starfishPrefab != null && starfishSpawnPoint != null)
+        if (percent >= 0.9f && starfishPrefab != null && starfishSpawnPoint != null) {
             Instantiate(starfishPrefab, starfishSpawnPoint.position, Quaternion.identity);
+
+            // Unlocking the starfish
+            StarStatus starStatus = starfishPrefab.GetComponent<StarStatus>();
+            if (starStatus != null) 
+                starStatus.StarUnlocked();
+        }
+
+
+        tryAgain.onClick.AddListener(() => TryAgain());
+    }
+
+    void TryAgain()
+    {
+        resultPanel.SetActive(false);
+        quizPanel.SetActive(true);
+
+        currentQuestion = 0;
+        score = 0;
+        selectedOption = -1;
+        hasAnswered = false;
+
+        DisplayQuestion();
     }
 }

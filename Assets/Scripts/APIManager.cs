@@ -14,6 +14,12 @@ public class APIManager : MonoBehaviour
         StartCoroutine(SendDataToGas());
     }
 
+    public void Record()
+    {
+
+        StartCoroutine("hi!");
+    }
+
     private IEnumerator SendDataToGas()
     {
         WWWForm form = new WWWForm();

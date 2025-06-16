@@ -10,6 +10,7 @@ public class PortalEntry : MonoBehaviour
         {
             // Instantly rotate door by 90 degrees on Y
             door.transform.Rotate(0f, 90f, 0f);
+            Debug.Log("Trigger Entered by: " + other.name);
         }
     }
 }
