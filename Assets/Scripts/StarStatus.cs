@@ -13,6 +13,10 @@ public class StarStatus : MonoBehaviour
         Camera arCamera = Camera.main;  // MainCamera Tag
         player = arCamera.transform;
 
+
+        // Load unlock status from PlayerPrefs
+        unlockStatus = PlayerPrefs.GetInt("StarfishUnlocked", 0) == 1;
+
         if (player == null)
         {
             Debug.LogWarning("StarStatus: Could not find AR camera!");
@@ -36,5 +40,7 @@ public class StarStatus : MonoBehaviour
     public void StarUnlocked()
     {
         unlockStatus = true;
+        PlayerPrefs.SetInt("StarfishUnlocked", 1);
+        PlayerPrefs.Save();
     }
 }

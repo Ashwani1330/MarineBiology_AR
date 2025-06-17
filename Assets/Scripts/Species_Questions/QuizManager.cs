@@ -26,7 +26,9 @@ public class QuizManager: MonoBehaviour {
     public TextMeshProUGUI resultScoreText;
     public GameObject starfishRewardImage;
     public Button tryAgain;
+    public Button tryAgain1;
 
+    public GameObject statusPanel;
 
     int currentQuestion = 0;
     int score = 0;
@@ -35,8 +37,29 @@ public class QuizManager: MonoBehaviour {
 
     void Start()
     {
-        resultPanel.SetActive(false);
-        DisplayQuestion();
+        bool hasUnlockedStarfish = PlayerPrefs.GetInt("StarfishUnlocked", 0) == 1;
+
+        if (hasUnlockedStarfish)
+        {
+            quizPanel.SetActive(false);
+            resultPanel.SetActive(false);
+            statusPanel.SetActive(true);
+
+
+            tryAgain1.onClick.RemoveAllListeners();
+            // Attach Listner to TryAgain button
+            tryAgain1.onClick.AddListener(() => {
+                    statusPanel.SetActive(false);
+                    TryAgain();
+                    });
+        }
+        else
+        {
+            statusPanel.SetActive(false);
+            resultPanel.SetActive(false);
+            quizPanel.SetActive(true);
+            DisplayQuestion();
+        }
     }
 
     void DisplayQuestion()
@@ -132,11 +155,14 @@ public class QuizManager: MonoBehaviour {
 
             // Unlocking the starfish
             StarStatus starStatus = starfishPrefab.GetComponent<StarStatus>();
-            if (starStatus != null) 
+            if (starStatus != null) {
                 starStatus.StarUnlocked();
+                PlayerPrefs.SetInt("StarfishUnlocked", 1);  // 1 = true
+                PlayerPrefs.Save();
+            }
         }
 
-
+        tryAgain.onClick.RemoveAllListeners();
         tryAgain.onClick.AddListener(() => TryAgain());
     }
 
