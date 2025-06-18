@@ -3,15 +3,22 @@ using UnityEngine.InputSystem;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class WaterPlaneSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject waterPlanePrefab;
     [SerializeField] private InputActionAsset inputActions;
+    [SerializeField] private Transform fixedWorldContainer;
 
     private ARRaycastManager _arRaycastManager;
     private ARPlaneManager _arPlaneManager;
     private ARAnchorManager _arAnchorManager;
+
+    private WaterPlaneMover _moverInstance;
+    public Button upButton;
+    public Button downButton;
+    // public GameObject waterCamPlane;
 
     private InputAction _touchAction;
     private bool _planePlaced;
@@ -70,9 +77,15 @@ public class WaterPlaneSpawner : MonoBehaviour
                     }
 
                     // Instantiate water plane as child of anchor
-                    GameObject spawnedPlane = Instantiate(waterPlanePrefab, Vector3.zero, Quaternion.identity, anchor.transform);
+                    GameObject spawnedPlane = Instantiate(waterPlanePrefab, hitPose.position, hitPose.rotation, fixedWorldContainer);
+                    _moverInstance = spawnedPlane.GetComponent<WaterPlaneMover>();
+                    
+                    // Assign button listeners
+                    upButton.onClick.AddListener(_moverInstance.MoveWaterDown);
+                    downButton.onClick.AddListener(_moverInstance.MoveWaterUp);
 
-                    // Assign water surface to the depth controller
+                    // No need to set water surface on OceanDepthController anymore
+                    /*
                     OceanDepthController depthController = FindAnyObjectByType<OceanDepthController>();
                     if (depthController != null)
                     {
@@ -82,7 +95,9 @@ public class WaterPlaneSpawner : MonoBehaviour
                     {
                         Debug.LogWarning("OceanDepthAndWaterFXController not found.");
                     }
+                    */
 
+                    // waterCamPlane.SetActive(true);
                     _planePlaced = true;
 
                     // Disable plane detection and hide existing planes

@@ -73,3 +73,11 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Nvim-Server
+start_nvim_server.bat
+start_neovide_client.bat
+start_nvim_client.bat
+
+# Ignore Wit.ai config
+**/wit-config.asset
