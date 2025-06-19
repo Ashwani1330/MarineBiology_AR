@@ -10,6 +10,8 @@ public class BackNavigation : MonoBehaviour
     public GameObject infoCanvas;
     public GameObject quizCanvas;
 
+    public CrossPlatformTTS ttsManager;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -20,6 +22,10 @@ public class BackNavigation : MonoBehaviour
             {
                 if (canvas.gameObject.activeSelf)
                 {
+                    if (ttsManager != null)
+                    {
+                        ttsManager.Stop(); // Stop any ongoing TTS before closing the canvas
+                    }
                     canvas.gameObject.SetActive(false);
                     return;
                 }

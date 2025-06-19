@@ -12,6 +12,9 @@ public class ARAppVoiceManager : MonoBehaviour
     [Tooltip("Reference to the MicrophoneRecord component to know when recording starts/stops.")]
     public MicrophoneRecord microphoneRecord;
 
+    [Tooltip("Reference to TTS component for text-to-speech functionality.")]
+    public CrossPlatformTTS ttsManager;
+
     [Header("UI Elements")]
     [Tooltip("The button that starts the recording process.")]
     public Button recordButton;
@@ -62,6 +65,7 @@ public class ARAppVoiceManager : MonoBehaviour
     {
         if (!microphoneRecord.IsRecording)
         {
+            ttsManager.Stop(); // Stop any ongoing TTS before starting recording
             // --- Start Recording ---
             voiceController.StartListening();
 

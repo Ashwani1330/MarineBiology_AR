@@ -8,6 +8,7 @@ public class APIManager : MonoBehaviour
     [SerializeField] private string gasUrl;
     [SerializeField] private TextMeshProUGUI prompt;
     [SerializeField] private TextMeshProUGUI responseText;
+    [SerializeField] private CrossPlatformTTS ttsManager;
 
     public void SendPrompt()
     {
@@ -40,5 +41,11 @@ public class APIManager : MonoBehaviour
         
         Debug.Log(response);
         responseText.text = response;
+
+        // Speak the new AI response
+        if (ttsManager != null && !string.IsNullOrEmpty(response))
+        {
+            ttsManager.Speak(response);
+        }
     }
 }
