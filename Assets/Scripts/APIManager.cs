@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Networking;
 
 public class APIManager : MonoBehaviour
@@ -9,9 +10,20 @@ public class APIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI prompt;
     [SerializeField] private TextMeshProUGUI responseText;
     [SerializeField] private CrossPlatformTTS ttsManager;
+    [SerializeField] private GameObject spinner;
+    [SerializeField] private Button sendButton;
+    [SerializeField] private ARAppVoiceManager voiceManager;
+    private bool fasle;
 
     public void SendPrompt()
     {
+        // Clear the previous response immediately when the send button is pressed
+        responseText.text = "";
+
+        // Disable the send button while waiting
+        if (sendButton != null)
+            sendButton.interactable = false;
+
         StartCoroutine(SendDataToGas());
     }
 
@@ -23,8 +35,19 @@ public class APIManager : MonoBehaviour
 
     private IEnumerator SendDataToGas()
     {
+        // show spinner
+        if (spinner != null)
+            spinner.SetActive(true);
+
+        // Use the transcription from ARAppVoiceManager 
+        string userPrompt = "";
+        if (voiceManager != null)
+            userPrompt = voiceManager.GetLastTranscription();
+        else if (prompt != null)
+            userPrompt = prompt.text;
+
         WWWForm form = new WWWForm();
-        form.AddField("parameter", prompt.text);
+        form.AddField("parameter", userPrompt);
         UnityWebRequest www = UnityWebRequest.Post(gasUrl, form);
         
         yield return www.SendWebRequest();
@@ -47,5 +70,9 @@ public class APIManager : MonoBehaviour
         {
             ttsManager.Speak(response);
         }
+
+        // Hide spinner
+        if (spinner != null)
+            spinner.SetActive(false);
     }
 }

@@ -19,16 +19,21 @@ public class ARAppVoiceManager : MonoBehaviour
     [Tooltip("The button that starts the recording process.")]
     public Button recordButton;
 
+    [Tooltip("Button for sending the transcribed prompt to the AI.")]
+    public Button sendButton;
+
     [Tooltip("The button's text to indicate the current state.")]
     public TextMeshProUGUI buttonText;
     
     [Tooltip("A UI Text element to show the transcription result.")]
     public TextMeshProUGUI outputText;
 
+    private string lastTranscription = "";
+
     private void Start()
     {
         // Make sure all references are set
-        if (voiceController == null || microphoneRecord == null || recordButton == null || buttonText == null || outputText == null)
+        if (voiceController == null || microphoneRecord == null || recordButton == null || sendButton == null || buttonText == null || outputText == null)
         {
             Debug.LogError("VoiceUIManager: A reference is missing! Please assign all fields in the Inspector.");
             return;
@@ -40,6 +45,9 @@ public class ARAppVoiceManager : MonoBehaviour
 
         // Set up the button's click listener
         recordButton.onClick.AddListener(OnRecordButtonPressed);
+
+        // Disable the send button initially
+        sendButton.interactable = false;
 
         // Set the initial state
         ResetUI();
@@ -72,7 +80,9 @@ public class ARAppVoiceManager : MonoBehaviour
             // Update UI to show we are listening
             buttonText.text = "Listening...";
             recordButton.interactable = false; // Disable button while listening
+            sendButton.interactable = false;  // Disable send while recording
             outputText.text = "Listening for your voice...";
+            lastTranscription = "";
         }
     }
 
@@ -81,11 +91,17 @@ public class ARAppVoiceManager : MonoBehaviour
     /// </summary>
     private void OnTranscriptionReceived(string transcription)
     {
+        lastTranscription = transcription;
+
         // Display the final text
         outputText.text = transcription;
 
         // Reset the UI to its initial state
         ResetUI();
+
+        // Enable send button only if the transcription is not empty/whitespace
+        sendButton.interactable = !string.IsNullOrWhiteSpace(transcription);
+
     }
 
     /// <summary>
@@ -109,5 +125,9 @@ public class ARAppVoiceManager : MonoBehaviour
         buttonText.text = "Speak";
         recordButton.interactable = true;
     }
-}
 
+    public string GetLastTranscription()
+    {
+        return lastTranscription;
+    }
+}
