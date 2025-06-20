@@ -20,6 +20,6 @@ public class UIManager : MonoBehaviour
 
     public void LoadCustomCreateScene()
     {
-        SceneManager.LoadScene("Octo_controller");
+        SceneManager.LoadScene("StartScreenScene");
     }
 }

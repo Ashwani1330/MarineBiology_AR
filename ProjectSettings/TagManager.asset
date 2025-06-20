@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Underwater
+  - Actor
   layers:
   - Default
   - TransparentFX

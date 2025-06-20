@@ -1930,6 +1930,8 @@ MonoBehaviour:
   resultScoreText: {fileID: 4698897145669981200}
   starfishRewardImage: {fileID: 8201337132063842773}
   tryAgain: {fileID: 0}
+  tryAgain1: {fileID: 0}
+  statusPanel: {fileID: 0}
 --- !u!1 &1346648958601026538
 GameObject:
   m_ObjectHideFlags: 0
