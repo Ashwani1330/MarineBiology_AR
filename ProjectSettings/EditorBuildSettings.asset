@@ -35,6 +35,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PlacedActorListScene.unity
     guid: a7387ea049f67924c9f54edaaaaf062a
+  - enabled: 1
+    path: Assets/Scenes/BehaviorScene.unity
+    guid: 874e489f07464e64ca8b28228f99af8f
+  - enabled: 1
+    path: Assets/Scenes/AddScriptsScene.unity
+    guid: e197e9afbd776cf4caefe5e925d89772
+  - enabled: 1
+    path: Assets/Scenes/ARPlacementScene.unity
+    guid: ca99e8a77ea4fd946901f777f83c50f6
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 6ee72d15cf39dd748a13eac57397b9af,
       type: 2}

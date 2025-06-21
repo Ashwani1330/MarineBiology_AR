@@ -296,11 +296,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 184027997}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8fd25d1623cfd041ae1acd7b7532fb2, type: 3}
+  m_Script: {fileID: 11500000, guid: ff33d870aebba4b40aaafb8ee83c3f5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   contentParent: {fileID: 1906960275}
-  listItemPrefab: {fileID: 4770311783958814656, guid: 19b53638588d90f43b495f050e2dd7d5,
+  listItemPrefab: {fileID: 4770311783958814656, guid: fda0347b75ad279438727fea6cf08ede,
     type: 3}
   saveButton: {fileID: 2074311370}
 --- !u!1 &264508734
@@ -1390,7 +1390,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1783574007}
-  - component: {fileID: 1783574006}
+  - component: {fileID: 1783574008}
   m_Layer: 0
   m_Name: ARSceneNavigator
   m_TagString: Untagged
@@ -1398,18 +1398,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1783574006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1783574005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b1ad8304925fd84394c61ff8ebca88e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1783574007
 Transform:
   m_ObjectHideFlags: 0
@@ -1425,6 +1413,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1783574008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783574005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e32277976ad98a14cb47d1b21b621d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1808344032
 GameObject:
   m_ObjectHideFlags: 0
@@ -1791,8 +1791,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1783574006}
-        m_TargetAssemblyTypeName: ARSceneNavigator, Unity.XR.Interaction.Toolkit.Samples.ARStarterAssets
+      - m_Target: {fileID: 1783574008}
+        m_TargetAssemblyTypeName: ARSceneNavigator, Assembly-CSharp
         m_MethodName: GoToARPlacementScene
         m_Mode: 1
         m_Arguments:

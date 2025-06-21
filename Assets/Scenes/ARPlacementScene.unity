@@ -14,8 +14,8 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.45490208, g: 0.86415094, b: 0.8526598, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
@@ -852,7 +852,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -1201,12 +1201,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2097806999}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 660a6eeb82c96784e856ffbd6f43fae7, type: 3}
+  m_Script: {fileID: 11500000, guid: 21b97440aaa067e40b0af6ff7cfc15a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   raycastManager: {fileID: 1658996665}
   arCamera: {fileID: 1646786904}
-  actorDatabase: {fileID: 11400000, guid: 01a401328aca7c447bf291543ba028e0, type: 2}
+  actorDatabase: {fileID: 11400000, guid: 937200d78d938f34aae38295ee1f097f, type: 2}
   joystick: {fileID: 306658162}
   joystickUIRoot: {fileID: 181240114}
 --- !u!4 &2097807001
